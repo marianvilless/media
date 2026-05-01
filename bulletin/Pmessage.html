@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal's Message - School Name</title>
+    <style>
+        :root {
+            --primary-color: #795548;
+            --accent-teal: #00796b;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-teal);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1523050853063-bd8012fec040?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1000px;
+            margin: -50px auto 50px;
+            padding: 0 20px;
+            padding-bottom: 50px;
+        }
+
+        .content-card {
+            background: var(--white);
+            padding: 90px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            animation: fadeInUp 1s ease-out;
+
+        }
+
+        /* Principal Profile Side */
+        .profile-side {
+            text-align: center;
+        }
+
+        .profile-side img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--bg-light);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .profile-side h3 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .profile-side p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Message Side */
+        .message-side h2 {
+            margin-bottom: 20px;
+            color: var(--accent-teal);
+            position: relative;
+            display: inline-block;
+        }
+
+        .message-side h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-teal);
+        }
+
+        .message-side p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 850px) {
+            .content-card {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Marianville Media</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Leadership & Vision</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="content-card">
+            <aside class="profile-side">
+                <img src="freda.png" alt="Principal">
+                <h3>Sr. Freda Saura, OSLH</h3>
+                <p>Principal, Marianville Secondary School</p>
+            </aside>
+
+            <article class="message-side">
+                <h2>Principal's Message</h2>
+                <p>Welcome to our school community. At the heart of our mission is the belief that every student possesses unique talents and the capacity for extraordinary growth.</p>
+                <p>This year, we are focusing on integrating technology with traditional values, ensuring our students are prepared for the challenges of the 21st century while remaining grounded in empathy and integrity.</p>
+                <p>We invite parents and students alike to collaborate with us in making this academic year the most transformative one yet. Together, we build the future.</p>
+            </article>
+        </section>
+    </main>
+
+        <main class="container">
+        <section class="content-card">
+            <aside class="profile-side">
+                <img src="" alt="Principal">
+                <h3>Miss. Lepon</h3>
+                <p>Principal-Deputy Academy, Marianville Secondary School</p>
+            </aside>
+            <article class="message-side">
+                <h2>Deputy Academy's Message</h2>
+                <p>Welcome to our school community. At the heart of our mission is the belief that every student possesses unique talents and the capacity for extraordinary growth.</p>
+                <p>This year, we are focusing on integrating technology with traditional values, ensuring our students are prepared for the challenges of the 21st century while remaining grounded in empathy and integrity.</p>
+                <p>We invite parents and students alike to collaborate with us in making this academic year the most transformative one yet. Together, we build the future.</p>
+            </article>
+        </section>
+    </main>
+
+
+
+     <main class="container">
+        <section class="content-card">
+            <aside class="profile-side">
+                <img src="" alt="Principal">
+                <h3>Mrs. Hape</h3>
+                <p>Principal-Deputy Admin, Marianville Secondary School</p>
+            </aside>
+            <article class="message-side">
+                <h2>Deputy Admin's Message</h2>
+                <p>Welcome to our school community. At the heart of our mission is the belief that every student possesses unique talents and the capacity for extraordinary growth.</p>
+                <p>This year, we are focusing on integrating technology with traditional values, ensuring our students are prepared for the challenges of the 21st century while remaining grounded in empathy and integrity.</p>
+                <p>We invite parents and students alike to collaborate with us in making this academic year the most transformative one yet. Together, we build the future.</p>
+            </article>
+        </section>
+    </main>
+
+</body>
+</html>
