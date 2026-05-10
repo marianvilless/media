@@ -171,6 +171,23 @@
             border-radius: 5px;
         }
 
+        /* Image Container */
+        .image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
         /* Specific Note Colors */
         .highlights { background-color: var(--note-yellow); --rotation: -2deg; animation-delay: 0.1s; }
         .events { background-color: var(--note-blue); --rotation: 3deg; animation-delay: 0.2s; }
@@ -180,6 +197,7 @@
         .student { background-color: var(--note-purple); --rotation: 1deg; animation-delay: 0.6s; }
         .principal { background-color: var(--note-teal); --rotation: 0.5deg; animation-delay: 0.7s; height: auto; min-height: 150px; }
         .faith { background-color: var(--note-green); --rotation: 3deg; animation-delay: 0.5s; height: auto; min-height: 320px; padding: 20px; justify-content: flex-start; }
+        .daily-inspiration { background-color: var(--note-green); --rotation: -1deg; animation-delay: 0.3s; height: auto; min-height: 280px; padding: 0; }
 
         /* Hover Effects */
         .note-link:hover {
@@ -287,10 +305,11 @@
         </a>
 
         <!-- Inspirational Quotes Section -->
-        <a href="quotes.html" class="note-link">
-            <div class="note-card quotes">
-                <h2>Daily Inspiration</h2>
-                <p>https://www.positivityblog.com/monday-motivation-quotes/</p>
+        <a href="https://www.positivityblog.com/monday-motivation-quotes/" class="note-link" target="_blank">
+            <div class="note-card daily-inspiration">
+                <div class="image-container">
+                    <img src="https://www.positivityblog.com/wp-content/uploads/2022/06/Monday-Motivation-Quotes.jpg" alt="Daily Inspiration - Monday Motivation Quotes">
+                </div>
             </div>
         </a>
 
@@ -343,6 +362,11 @@
 
             noteLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
+                    // Allow external links to open normally
+                    if (this.hasAttribute('target') && this.getAttribute('target') === '_blank') {
+                        return;
+                    }
+                    
                     e.preventDefault(); // Stop immediate navigation
                     const destination = this.href;
 
